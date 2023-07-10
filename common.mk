@@ -136,7 +136,6 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
-    tinymix \
     sound_trigger.primary.kona
 
 PRODUCT_PACKAGES += \
@@ -257,8 +256,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1.vendor \
-    com.motorola.hardware.biometric.fingerprint@1.0.vendor
+    android.hardware.biometrics.fingerprint@2.1.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/uinput-egis.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-egis.idc \
@@ -377,6 +375,8 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
+    NfcNci \
+    SecureElement \
     Tag
 
 # OMX
@@ -425,7 +425,8 @@ PRODUCT_PACKAGES += \
 
 # USB HAL
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.3-service.motokona
+    android.hardware.usb-service.motokona \
+    android.hardware.usb.gadget-service.motokona
 
 # Vibrator
 $(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
@@ -479,7 +480,7 @@ PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
 # VNDK
-PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := strict
+PRODUCT_ENFORE_ARTIFACT_PATH_REQUIREMENTS := strict
 
 # Wifi
 PRODUCT_PACKAGES += \
