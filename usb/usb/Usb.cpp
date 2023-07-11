@@ -574,7 +574,7 @@ Status getPortStatusHelper(android::hardware::usb::Usb *usb,
 
             (*currentPortStatus)[i].canChangeMode = true;
             (*currentPortStatus)[i].canChangeDataRole =
-                port.second ? canSwitchRoleHelpe(port.first) : false;
+                port.second ? canSwitchRoleHelper(port.first) : false;
             (*currentPortStatus)[i].canChangePowerRole =
                 port.second ? canSwitchRoleHelper(port.first) : false;
 
